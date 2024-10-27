@@ -4,3 +4,4 @@ dist/
 build/
 __pycache__/
 booking-schedule.xlsx
+.DS_Store
