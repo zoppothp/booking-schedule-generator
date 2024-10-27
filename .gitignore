@@ -5,3 +5,4 @@ build/
 __pycache__/
 booking-schedule.xlsx
 .DS_Store
+.ruff_cache
