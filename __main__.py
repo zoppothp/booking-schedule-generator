@@ -1,6 +1,6 @@
 from openpyxl import Workbook
 from openpyxl.styles import Alignment, Font, PatternFill
-from date_row import DateRow  # Import the DateRow class
+from block import Block
 
 wb = Workbook()
 ws = wb.active
@@ -15,11 +15,7 @@ ws["B1"].font = header_font
 ws["B1"].alignment = Alignment(horizontal="center", vertical="center")
 ws["B1"].fill = header_fill
 
-date_row_1 = DateRow(month=1, year=2025, col=4, row=3)
-date_row_1.setup_dates(ws, start_col=4)
-
-date_row_2 = DateRow(month=1, year=2025, col=4, row=6)
-date_row_2.setup_dates(ws, start_col=4)
-
+block = Block(month=1, year=2025, worksheet=ws)
+block.date_row(col=4, row=2)
 
 wb.save("booking-schedule.xlsx")
