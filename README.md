@@ -1,1 +1,1 @@
-# booking-plan-generator
+# booking-schedule-generator
