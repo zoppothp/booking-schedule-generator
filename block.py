@@ -62,7 +62,7 @@ class Block:
             date_cell.value = i
             day_cell.alignment = Alignment(horizontal="center")
             date_cell.alignment = Alignment(horizontal="center")
-            
+
             day_cell.fill = PatternFill(
                 start_color="FFFFFF", end_color="FFFFFF", fill_type="solid"
             )
@@ -158,20 +158,3 @@ class Block:
                         weekday_name == self.weekdays[self.separate_week_at]
                     ):  # TODO: implement this more efficiently
                         cell.border = Border(right=self.medium_side)
-
-    # def price_block(self, prices, cleaning_costs):
-    #     """Generates the price block as per the provided image structure."""
-
-    #     # Content for each row in the block
-
-    #     # Set common font and fill for cells
-    #     orange_font = Font(color="FFA500", italic=True)
-    #     alignment = Alignment(horizontal="center", vertical="center")
-
-    #     for row_offset, row_data in enumerate(rows):
-    #         for col_offset, value in enumerate(row_data):
-    #             cell = self.worksheet.cell(row=start_row + row_offset, column=start_col + col_offset)
-    #             cell.value = value
-    #             cell.font = orange_font
-    #             cell.alignment = alignment
-    #             cell.fill = PatternFill(start_color="FFFFFF", end_color="FFFFFF", fill_type="solid")

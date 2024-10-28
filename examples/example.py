@@ -50,19 +50,20 @@ for i in range(0, 12):
         prices=appartment_typ_a_prices,
         seasons=seasons,
     )
+
     block.date_block(start_col=4, start_row=2)
-    block.blank_block(start_col=4, start_row=4, end_row=8)
     block.date_block(start_col=4, start_row=8)
-    block.blank_block(start_col=4, start_row=10, end_row=14)
     block.date_block(start_col=4, start_row=14)
-    block.blank_block(start_col=4, start_row=16, end_row=20)
     block.date_block(start_col=4, start_row=20)
-    block.blank_block(start_col=4, start_row=22, end_row=26)
     block.date_block(start_col=4, start_row=26)
-    block.blank_block(start_col=4, start_row=28, end_row=32)
     block.date_block(start_col=4, start_row=32)
-    block.blank_block(start_col=4, start_row=34, end_row=38)
     block.date_block(start_col=4, start_row=38)
 
+    block.blank_block(start_col=4, start_row=4, end_row=8)
+    block.blank_block(start_col=4, start_row=10, end_row=14)
+    block.blank_block(start_col=4, start_row=16, end_row=20)
+    block.blank_block(start_col=4, start_row=22, end_row=26)
+    block.blank_block(start_col=4, start_row=28, end_row=32)
+    block.blank_block(start_col=4, start_row=34, end_row=38)
 
 wb.save("booking-schedule.xlsx")
