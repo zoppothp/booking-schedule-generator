@@ -1,8 +1,5 @@
-from unittest.mock import right
-
 from openpyxl.styles import Alignment, Border, Side, PatternFill, Font
 import calendar
-from datetime import datetime
 
 
 class Block:

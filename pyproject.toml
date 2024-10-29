@@ -17,10 +17,6 @@ ruff = "^0.7.1"
 [tool.poetry.scripts]
 booking_schedule_generator = "booking_schedule_generator.__main__:main"
 
-[[tool.poetry.packages]]
-include = "booking_schedule_generator"
-from = "src"
-
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
