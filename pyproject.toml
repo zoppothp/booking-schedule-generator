@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "booking-plan-generator"
+name = "booking-schedule-generator"
 version = "0.1.0"
 description = "This package contains a tool for generating excel sheets for keeping track of bookings of your property."
 authors = ["Paul Zoppoth"]
@@ -9,9 +9,17 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.13"
 openpyxl = "^3.1.5"
+pyqt5 = "^5.15.11"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.7.1"
+
+[tool.poetry.scripts]
+booking_schedule_generator = "booking_schedule_generator.__main__:main"
+
+[[tool.poetry.packages]]
+include = "booking_schedule_generator"
+from = "src"
 
 [build-system]
 requires = ["poetry-core"]
