@@ -12,7 +12,8 @@ class Block:
         secondary_color,
         seasons: dict,
         lang: str = "DE",
-        separate_week_at: int = 5,
+        separate_week_at: int = 4,
+        col_width: int = 4,
     ):
         self.month = month
         self.year = year
@@ -24,6 +25,7 @@ class Block:
         self.dotted_side = Side(style="dotted")
         self.seasons = seasons
         self.separate_week_at = separate_week_at
+        self.col_width = col_width
 
         weekdays_by_lang = {
             "DE": ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"],
@@ -33,6 +35,12 @@ class Block:
         self.weekdays = weekdays_by_lang.get(lang)
         self.current_seasons: list = self.get_season()
         self.season_change_day = self.check_for_season_change()
+
+    def set_column_width(self, start_col):
+        """Sets day column width."""
+        for i in range(self.days):
+            col_letter = self.worksheet.cell(row=1, column=start_col + i).column_letter
+            self.worksheet.column_dimensions[col_letter].width = self.col_width
 
     def get_num_days(self, year, month):
         """Calculate and return the number of days in the given month and year."""
@@ -68,6 +76,7 @@ class Block:
 
     def date_block(self, start_col, start_row):
         """Generates the date block including week day names for the given month ans year."""
+        self.set_column_width(start_col)
 
         for i in range(1, self.days + 1):
             weekday_index = calendar.weekday(self.year, self.month, i)
@@ -172,7 +181,7 @@ class Block:
                 else:
                     if (
                         weekday_name == self.weekdays[self.separate_week_at]
-                    ):  # TODO: implement this more efficiently
+                    ):
                         cell.border = Border(right=self.medium_side)
 
     def price_block(self, start_col, start_row, appartment):

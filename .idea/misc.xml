@@ -3,5 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="Poetry (booking-plan-generator)" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Poetry (booking-plan-generator)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.13 (booking-plan-generator)" project-jdk-type="Python SDK" />
 </project>
